@@ -6,6 +6,7 @@
 //  Copyright © 2019 Daniel Loftus. All rights reserved.
 //
 // Under Git Version Control
+// Using Dcloftus's GitHub
 
 import UIKit
 
