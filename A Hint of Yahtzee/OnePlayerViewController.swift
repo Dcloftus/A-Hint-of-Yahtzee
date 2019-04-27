@@ -53,6 +53,10 @@ class OnePlayerViewController: UIViewController {
     
     @IBOutlet weak var BottomRightSwitch: UISwitch!
     
+    
+    @IBOutlet weak var CurrentScore: UILabel!
+    
+    
 //***********************************************************************************//
     
     
@@ -77,17 +81,7 @@ class OnePlayerViewController: UIViewController {
     @IBAction func Roll(_ sender: Any) {
         RollFunc()
     }
-    
-    //this will limit the number of rolls to 3
-    
-   
-    func addScore(one:UInt32, two:UInt32, three:UInt32, four:UInt32, five:UInt32) {
-        print(one, two, three, four, five)
-        
-        
-        
-        
-    }
+
 
     func RollFunc() {
         //Increments a number of rolls counter
@@ -120,11 +114,89 @@ class OnePlayerViewController: UIViewController {
             scores[4] = arc4random_uniform(5) + 1
             bottomRight.image = UIImage(named: "Dice\(scores[4])")
         }
+        
+        //limits rolls to 3
         if (rolls == 3) {
             Roll.isEnabled = false
             addScore(one:scores[0], two:scores[1], three:scores[2], four:scores[3], five:scores[4])
-            print(scores[0], scores[1], scores[2], scores[3], scores[4])
+            CurrentScore.text = "\(scores[0] + scores[1] + scores[2] + scores[3] + scores[4])"
         }
+    }
+    
+    func addScore(one:UInt32, two:UInt32, three:UInt32, four:UInt32, five:UInt32) {
+        print(one, two, three, four, five)
+        
+        var highest:UInt32 = 0
+        
+        var turnScores: [UInt32] = [0,0,0,0,0,0,0,0,0,0,0,0]
+        
+        ///Chance
+        turnScores[0] = one + two + three + four + five
+        
+        //Yahtzee
+        if (one == two && two == three && three == four && four == five){
+            turnScores[1] = 50
+        }
+        //Large stright
+        
+        //Small stright
+        
+        //4 0f a kind
+        
+        //3 of a kind
+        
+        //***************************************************************************//
+        
+        //Sixes
+        for i in 0...4 {
+            if (scores[i] == 6) {
+                turnScores[6] += 6
+            }
+        }
+        
+        //Fives
+        for i in 0...4 {
+            if (scores[i] == 5) {
+                turnScores[7] += 5
+            }
+        }
+        
+        //Fours
+        for i in 0...4 {
+            if (scores[i] == 4) {
+                turnScores[8] += 4
+            }
+        }
+        
+        //Threes
+        for i in 0...4 {
+            if (scores[i] == 3) {
+                turnScores[9] += 3
+            }
+        }
+        
+        //Twos
+        for i in 0...4 {
+            if (scores[i] == 2) {
+                turnScores[10] += 2
+            }
+        }
+        
+        //Ones
+        for i in 0...4 {
+            if (scores[i] == 1) {
+                turnScores[11] += 1
+            }
+        }
+        
+        
+        //Check to see which which of turnScores is highest
+        for i in 0...11 {
+            if(turnScores[i] > highest) {
+                highest = turnScores[i]
+            }
+        }
+        
     }
     
     
