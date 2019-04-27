@@ -127,35 +127,35 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2IO-AP-0sW">
                                 <rect key="frame" x="10" y="448" width="394" height="267"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice1" translatesAutoresizingMaskIntoConstraints="NO" id="Igz-a4-0Pd" userLabel="Top Left">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice0" translatesAutoresizingMaskIntoConstraints="NO" id="Igz-a4-0Pd" userLabel="Top Left">
                                         <rect key="frame" x="80" y="20" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="MFM-Ia-xh3"/>
                                             <constraint firstAttribute="height" constant="100" id="v83-hD-3s9"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice2" translatesAutoresizingMaskIntoConstraints="NO" id="x4g-Sc-efp" userLabel="Top Right">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice0" translatesAutoresizingMaskIntoConstraints="NO" id="x4g-Sc-efp" userLabel="Top Right">
                                         <rect key="frame" x="214" y="20" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="hVU-On-Pea"/>
                                             <constraint firstAttribute="height" constant="100" id="vwd-y3-zMh"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice4" translatesAutoresizingMaskIntoConstraints="NO" id="Ied-YI-hat" userLabel="Bottom Left">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice0" translatesAutoresizingMaskIntoConstraints="NO" id="Ied-YI-hat" userLabel="Bottom Left">
                                         <rect key="frame" x="20" y="147" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="Kja-4G-wz2"/>
                                             <constraint firstAttribute="width" constant="100" id="N8s-uX-fBy"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice5" translatesAutoresizingMaskIntoConstraints="NO" id="wbR-g7-fXc" userLabel="Bottom Center">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice0" translatesAutoresizingMaskIntoConstraints="NO" id="wbR-g7-fXc" userLabel="Bottom Center">
                                         <rect key="frame" x="147" y="147" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="NIM-uS-9XQ"/>
                                             <constraint firstAttribute="width" constant="100" id="aeO-ow-CXw"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice2" translatesAutoresizingMaskIntoConstraints="NO" id="TnH-5x-R3K" userLabel="Bottom Right">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice0" translatesAutoresizingMaskIntoConstraints="NO" id="TnH-5x-R3K" userLabel="Bottom Right">
                                         <rect key="frame" x="274" y="147" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="CV3-sa-k5C"/>
@@ -388,10 +388,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Dice1" width="1280" height="1280"/>
-        <image name="Dice2" width="1280" height="1280"/>
-        <image name="Dice4" width="1280" height="1280"/>
-        <image name="Dice5" width="1280" height="1280"/>
+        <image name="Dice0" width="1280" height="1280"/>
         <image name="background" width="1920" height="1200"/>
         <image name="yahtzee" width="540" height="360"/>
     </resources>
