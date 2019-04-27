@@ -38,7 +38,34 @@ class OnePlayerViewController: UIViewController {
     @IBOutlet weak var bottomCenter: UIImageView!
     
     @IBOutlet weak var bottomRight: UIImageView!
+
+    @IBOutlet weak var Roll: UIButton!
     
+    
+    
+    @IBOutlet weak var TopLeftSwitch: UISwitch!
+    
+    @IBOutlet weak var TopRightSwitch: UISwitch!
+    
+    @IBOutlet weak var BottomLeftSwitch: UISwitch!
+    
+    @IBOutlet weak var BottomCenterSwitch: UISwitch!
+    
+    @IBOutlet weak var BottomRightSwitch: UISwitch!
+    
+    //***********************************************************************************//
+    
+    
+    
+//************************************ Variables ************************************//
+    
+    var firstNum = 0
+    var secondNum = 0
+    var thirdNum = 0
+    var fourthNum = 0
+    var fifthNum = 0
+    
+    var rolls = 0
 //***********************************************************************************//
     
     
@@ -46,20 +73,47 @@ class OnePlayerViewController: UIViewController {
 //************************************ Functions ************************************//
     
     @IBAction func Roll(_ sender: Any) {
-        let firstNum = arc4random_uniform(5) + 1
-        let secondNum = arc4random_uniform(5) + 1
-        let thirdNum = arc4random_uniform(5) + 1
-        let fourthNum = arc4random_uniform(5) + 1
-        let fifthNum = arc4random_uniform(5) + 1
+        //Increments a number of rolls counter
+        rolls += 1
         
-        topLeft.image = UIImage(named: "Dice\(firstNum)")
-        topRight.image = UIImage(named: "Dice\(secondNum)")
-        bottomLeft.image = UIImage(named: "Dice\(thirdNum)")
-        bottomCenter.image = UIImage(named: "Dice\(fourthNum)")
-        bottomRight.image = UIImage(named: "Dice\(fifthNum)")
+        //print(rolls)
         
+        //This mess of if statements will let you select dice you want to keep from re rolling
+        if !TopLeftSwitch.isOn {
+            let firstNum = arc4random_uniform(5) + 1
+            topLeft.image = UIImage(named: "Dice\(firstNum)")
+        }
+        
+        if !TopRightSwitch.isOn {
+            let secondNum = arc4random_uniform(5) + 1
+            topRight.image = UIImage(named: "Dice\(secondNum)")
+        }
+        
+        if !BottomLeftSwitch.isOn {
+            let thirdNum = arc4random_uniform(5) + 1
+            bottomLeft.image = UIImage(named: "Dice\(thirdNum)")
+        }
+        
+        if !BottomCenterSwitch.isOn {
+            let fourthNum = arc4random_uniform(5) + 1
+            bottomCenter.image = UIImage(named: "Dice\(fourthNum)")
+        }
+        
+        if !BottomRightSwitch.isOn {
+            let fifthNum = arc4random_uniform(5) + 1
+            bottomRight.image = UIImage(named: "Dice\(fifthNum)")
+        }
+        
+        
+        //this will limit the number of rolls to 3
+        if (rolls == 3) {
+            Roll.isEnabled = false
+        }
         
     }
+   
+
+    
     
 //***********************************************************************************//
 
