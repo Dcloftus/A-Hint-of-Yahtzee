@@ -66,6 +66,12 @@ class OnePlayerViewController: UIViewController {
     
     var scores: [UInt32] = [0,0,0,0,0,0,0,0,0,0,0,0,0]
     
+    var highest: UInt32 = 0
+    
+    var turnMax: Int = 0
+    
+    
+    
     //var firstNum:UInt32 = 0
     //var secondNum:UInt32 = 0
     //var thirdNum:UInt32 = 0
@@ -147,7 +153,7 @@ class OnePlayerViewController: UIViewController {
         
         //Small stright
         if ((one == 1 && two == 2 && three == 3 && four == 4)||(one == 2 && two == 3 && three == 4 && four == 5)||(one == 3 && two == 4 && three == 5 && four == 6)||(two == 1 && three == 2 && four == 3 && five == 4)||(two == 2 && three == 3 && four == 4 && five == 5)||(two == 3 && three == 4 && four == 5 && five == 6)){
-            turnScores[2] = 30
+            turnScores[3] = 30
         }
         
         //Full house
@@ -162,7 +168,7 @@ class OnePlayerViewController: UIViewController {
         
         //3 of a kind
         if ((one == two && two == three)||(two == three && three == four)||(three == four && four == five)){
-            turnScores[5] = one + two + three + four + five
+            turnScores[6] = one + two + three + four + five
         }
         
         //***************************************************************************//
@@ -170,56 +176,65 @@ class OnePlayerViewController: UIViewController {
         //Sixes
         for i in 0...4 {
             if (dice[i] == 6) {
-                turnScores[6] += 6
+                turnScores[7] += 6
             }
         }
         
         //Fives
         for i in 0...4 {
             if (dice[i] == 5) {
-                turnScores[7] += 5
+                turnScores[8] += 5
             }
         }
         
         //Fours
         for i in 0...4 {
             if (dice[i] == 4) {
-                turnScores[8] += 4
+                turnScores[9] += 4
             }
         }
         
         //Threes
         for i in 0...4 {
             if (dice[i] == 3) {
-                turnScores[9] += 3
+                turnScores[10] += 3
             }
         }
         
         //Twos
         for i in 0...4 {
             if (dice[i] == 2) {
-                turnScores[10] += 2
+                turnScores[11] += 2
             }
         }
         
         //Ones
         for i in 0...4 {
             if (dice[i] == 1) {
-                turnScores[11] += 1
+                turnScores[12] += 1
             }
         }
         
+        //print(turnScores)
+        //turnScores.sort()
+        print(turnScores)
+        
+        
         
         //Check to see which of turnScores is highest
-        //for i in 0...12 {
-        //    if(turnScores[i] > highest) {
-        //        highest = turnScores[i]
-        //    }else{
-        //        turnScores[i] = 0
-        //    }
-        //}
-        //i.text = "\(highest)"
-        
+        for i in 0...12 {
+            if(turnScores[i] > highest) {
+                //stores the value of the highest score combination
+                highest = turnScores[i]
+                //stores the index at which the highest score is stored
+                turnMax = i
+            }else{
+                turnScores[i] = 0
+                
+            }
+        }
+        print(highest)
+        print(turnMax)
     }
     
     
