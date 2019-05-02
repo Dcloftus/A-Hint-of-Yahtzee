@@ -64,7 +64,7 @@ class OnePlayerViewController: UIViewController {
 //************************************ Variables ************************************//
     var dice: [UInt32] = [0,0,0,0,0]
     
-    var scores: [UInt32] = [0,0,0,0,0,0,0,0,0,0,0,0,0]
+    var scores: [UInt32] = [51,51,51,51,51,51,51,51,51,51,51,51,51]
     
     var highest: UInt32 = 0
     
@@ -218,23 +218,36 @@ class OnePlayerViewController: UIViewController {
         //print(turnScores)
         //turnScores.sort()
         print(turnScores)
+        print(scores)
         
         
         
         //Check to see which of turnScores is highest
         for i in 0...12 {
-            if(turnScores[i] > highest) {
-                //stores the value of the highest score combination
+            if (turnScores[i] > highest) {
                 highest = turnScores[i]
-                //stores the index at which the highest score is stored
                 turnMax = i
-            }else{
-                turnScores[i] = 0
-                
             }
         }
+        
+        if (scores[turnMax] == 51) {
+            scores[turnMax] = turnScores[turnMax]
+        }else {
+            while (scores[turnMax] != 51) {
+                for i in 0...12 {
+                    if (turnScores[i] < highest){
+                        turnMax = i
+                        highest = turnScores[i]
+                    }
+                }
+            }
+            scores[turnMax] = turnScores[turnMax]
+        }
+            
+            
         print(highest)
         print(turnMax)
+        print(scores)
     }
     
     
