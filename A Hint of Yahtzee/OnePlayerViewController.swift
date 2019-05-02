@@ -62,7 +62,9 @@ class OnePlayerViewController: UIViewController {
     
     
 //************************************ Variables ************************************//
-    var scores: [UInt32] = [0,0,0,0,0]
+    var dice: [UInt32] = [0,0,0,0,0]
+    
+    var scores: [UInt32] = [0,0,0,0,0,0,0,0,0,0,0,0,0]
     
     //var firstNum:UInt32 = 0
     //var secondNum:UInt32 = 0
@@ -91,44 +93,45 @@ class OnePlayerViewController: UIViewController {
         
         //This mess of if statements will let you select dice you want to keep from re rolling
         if !TopLeftSwitch.isOn {
-            scores[0] = arc4random_uniform(5) + 1
-            topLeft.image = UIImage(named: "Dice\(scores[0])")
+            dice[0] = arc4random_uniform(5) + 1
+            topLeft.image = UIImage(named: "Dice\(dice[0])")
         }
         
         if !TopRightSwitch.isOn {
-            scores[1] = arc4random_uniform(5) + 1
-            topRight.image = UIImage(named: "Dice\(scores[1])")
+            dice[1] = arc4random_uniform(5) + 1
+            topRight.image = UIImage(named: "Dice\(dice[1])")
         }
         
         if !BottomLeftSwitch.isOn {
-            scores[2] = arc4random_uniform(5) + 1
-            bottomLeft.image = UIImage(named: "Dice\(scores[2])")
+            dice[2] = arc4random_uniform(5) + 1
+            bottomLeft.image = UIImage(named: "Dice\(dice[2])")
         }
         
         if !BottomCenterSwitch.isOn {
-            scores[3] = arc4random_uniform(5) + 1
-            bottomCenter.image = UIImage(named: "Dice\(scores[3])")
+            dice[3] = arc4random_uniform(5) + 1
+            bottomCenter.image = UIImage(named: "Dice\(dice[3])")
         }
         
         if !BottomRightSwitch.isOn {
-            scores[4] = arc4random_uniform(5) + 1
-            bottomRight.image = UIImage(named: "Dice\(scores[4])")
+            dice[4] = arc4random_uniform(5) + 1
+            bottomRight.image = UIImage(named: "Dice\(dice[4])")
         }
         
         //limits rolls to 3
         if (rolls == 3) {
             Roll.isEnabled = false
-            addScore(one:scores[0], two:scores[1], three:scores[2], four:scores[3], five:scores[4])
-            CurrentScore.text = "\(scores[0] + scores[1] + scores[2] + scores[3] + scores[4])"
+            dice.sort()
+            addScore(one:dice[0], two:dice[1], three:dice[2], four:dice[3], five:dice[4])
+            CurrentScore.text = "\(dice[0] + dice[1] + dice[2] + dice[3] + dice[4])"
         }
     }
     
     func addScore(one:UInt32, two:UInt32, three:UInt32, four:UInt32, five:UInt32) {
         print(one, two, three, four, five)
         
-        var highest:UInt32 = 0
+        //var highest:UInt32 = 0
         
-        var turnScores: [UInt32] = [0,0,0,0,0,0,0,0,0,0,0,0]
+        var turnScores: [UInt32] = [0,0,0,0,0,0,0,0,0,0,0,0,0]
         
         ///Chance
         turnScores[0] = one + two + three + four + five
@@ -138,64 +141,84 @@ class OnePlayerViewController: UIViewController {
             turnScores[1] = 50
         }
         //Large stright
+        if ((one == 1 && two == 2 && three == 3 && four == 4 && five == 5)||(one == 2 && two == 3 && three == 4 && four == 5 && five == 6)){
+            turnScores[2] = 40
+        }
         
         //Small stright
+        if ((one == 1 && two == 2 && three == 3 && four == 4)||(one == 2 && two == 3 && three == 4 && four == 5)||(one == 3 && two == 4 && three == 5 && four == 6)||(two == 1 && three == 2 && four == 3 && five == 4)||(two == 2 && three == 3 && four == 4 && five == 5)||(two == 3 && three == 4 && four == 5 && five == 6)){
+            turnScores[2] = 30
+        }
+        
+        //Full house
+        if ((one == two && two == three && four == five) || (one == two && three == four && four == five)){
+            turnScores[4] = 25
+        }
         
         //4 0f a kind
+        if ((one == two && two == three && three == four)||(two == three && three == four && four == five)){
+            turnScores[5] = one + two + three + four + five
+        }
         
         //3 of a kind
+        if ((one == two && two == three)||(two == three && three == four)||(three == four && four == five)){
+            turnScores[5] = one + two + three + four + five
+        }
         
         //***************************************************************************//
         
         //Sixes
         for i in 0...4 {
-            if (scores[i] == 6) {
+            if (dice[i] == 6) {
                 turnScores[6] += 6
             }
         }
         
         //Fives
         for i in 0...4 {
-            if (scores[i] == 5) {
+            if (dice[i] == 5) {
                 turnScores[7] += 5
             }
         }
         
         //Fours
         for i in 0...4 {
-            if (scores[i] == 4) {
+            if (dice[i] == 4) {
                 turnScores[8] += 4
             }
         }
         
         //Threes
         for i in 0...4 {
-            if (scores[i] == 3) {
+            if (dice[i] == 3) {
                 turnScores[9] += 3
             }
         }
         
         //Twos
         for i in 0...4 {
-            if (scores[i] == 2) {
+            if (dice[i] == 2) {
                 turnScores[10] += 2
             }
         }
         
         //Ones
         for i in 0...4 {
-            if (scores[i] == 1) {
+            if (dice[i] == 1) {
                 turnScores[11] += 1
             }
         }
         
         
-        //Check to see which which of turnScores is highest
-        for i in 0...11 {
-            if(turnScores[i] > highest) {
-                highest = turnScores[i]
-            }
-        }
+        //Check to see which of turnScores is highest
+        //for i in 0...12 {
+        //    if(turnScores[i] > highest) {
+        //        highest = turnScores[i]
+        //    }else{
+        //        turnScores[i] = 0
+        //    }
+        //}
+        //i.text = "\(highest)"
         
     }
     

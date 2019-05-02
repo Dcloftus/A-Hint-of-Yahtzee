@@ -9,7 +9,33 @@
 import UIKit
 
 class ConfigViewController: UIViewController {
-
+    
+    
+    
+    var OnePlayerVC: OnePlayerViewController?
+    
+    
+    
+    @IBOutlet weak var AcesLabel: UILabel!
+    @IBOutlet weak var TwosLabel: UILabel!
+    @IBOutlet weak var ThreesLabel: UILabel!
+    @IBOutlet weak var FoursLabel: UILabel!
+    @IBOutlet weak var FivesLabel: UILabel!
+    @IBOutlet weak var SixesLabel: UILabel!
+    @IBOutlet weak var ThreeOKLabel: UILabel!
+    @IBOutlet weak var FourOKLabel: UILabel!
+    @IBOutlet weak var FullHouseLabel: UILabel!
+    @IBOutlet weak var SMStrightLabel: UILabel!
+    @IBOutlet weak var LGStrightLabel: UILabel!
+    @IBOutlet weak var YahtzeeLabel: UILabel!
+    @IBOutlet weak var ChanceLabel: UILabel!
+    @IBOutlet weak var TotalLabel: UILabel!
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
