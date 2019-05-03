@@ -247,6 +247,34 @@
                                 <color key="shadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <size key="shadowOffset" width="2" height="-2"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeG-X9-uvk">
+                                <rect key="frame" x="102" y="750" width="210" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="33"/>
+                                <size key="titleShadowOffset" width="2" height="-2"/>
+                                <state key="normal" title="Next Turn">
+                                    <color key="titleColor" red="1" green="0.68424689620000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="Roll:" destination="pnV-1X-Goy" eventType="touchUpInside" id="x6o-P8-4Q7"/>
+                                    <action selector="nextTurn:" destination="pnV-1X-Goy" eventType="touchUpInside" id="tNy-RO-i5r"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeX-0t-fhp">
+                                <rect key="frame" x="112" y="760" width="210" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="33"/>
+                                <size key="titleShadowOffset" width="2" height="-2"/>
+                                <state key="normal" title="Next Turn">
+                                    <color key="titleColor" red="1" green="0.68424689620000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="Roll:" destination="pnV-1X-Goy" eventType="touchUpInside" id="TqW-xJ-FQq"/>
+                                    <action selector="nextTurn:" destination="pnV-1X-Goy" eventType="touchUpInside" id="n8e-wA-bLd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -285,6 +313,7 @@
                         <outlet property="bottomCenter" destination="wbR-g7-fXc" id="Xnn-i0-xLi"/>
                         <outlet property="bottomLeft" destination="Ied-YI-hat" id="4Gh-Qr-ndh"/>
                         <outlet property="bottomRight" destination="TnH-5x-R3K" id="rWF-eO-AMm"/>
+                        <outlet property="nextTurn" destination="eeG-X9-uvk" id="k1e-hi-mFK"/>
                         <outlet property="topLeft" destination="Igz-a4-0Pd" id="IDF-lI-KUj"/>
                         <outlet property="topRight" destination="x4g-Sc-efp" id="wso-Eu-jJ9"/>
                     </connections>
@@ -332,7 +361,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScoreSheet" translatesAutoresizingMaskIntoConstraints="NO" id="LXr-FD-4qO">
-                                <rect key="frame" x="30" y="296" width="354" height="379"/>
+                                <rect key="frame" x="30" y="296" width="354" height="379.00000000000023"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7.5" translatesAutoresizingMaskIntoConstraints="NO" id="rxV-IY-YCg">
                                 <rect key="frame" x="308" y="324.5" width="8.5" height="133.5"/>
@@ -564,6 +593,6 @@
         <image name="yahtzee" width="540" height="360"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e7K-xn-2wY"/>
+        <segue reference="Fad-Xt-lv8"/>
     </inferredMetricsTieBreakers>
 </document>
