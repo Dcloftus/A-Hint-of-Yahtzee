@@ -12,10 +12,6 @@ class ConfigViewController: UIViewController {
     
     
     
-    var OnePlayerVC: OnePlayerViewController?
-    
-    
-    
     @IBOutlet weak var AcesLabel: UILabel!
     @IBOutlet weak var TwosLabel: UILabel!
     @IBOutlet weak var ThreesLabel: UILabel!
@@ -31,7 +27,7 @@ class ConfigViewController: UIViewController {
     @IBOutlet weak var ChanceLabel: UILabel!
     @IBOutlet weak var TotalLabel: UILabel!
     
-    
+    var OnePlayerVC: OnePlayerViewController?
     
     
     
@@ -42,26 +38,26 @@ class ConfigViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        /*
-        TotalLabel.text = String(describing: (OnePlayerVC?.scores[13])!)
-        ChanceLabel.text = String(describing: (OnePlayerVC?.scores[12])!)
-        AcesLabel.text = String(describing: (OnePlayerVC?.scores[11])!)
-        TwosLabel.text = String(describing: (OnePlayerVC?.scores[10])!)
-        ThreesLabel.text = String(describing: (OnePlayerVC?.scores[9])!)
-        FoursLabel.text = String(describing: (OnePlayerVC?.scores[8])!)
-        FivesLabel.text = String(describing: (OnePlayerVC?.scores[7])!)
-        SixesLabel.text = String(describing: (OnePlayerVC?.scores[6])!)
-        ThreeOKLabel.text = String(describing: (OnePlayerVC?.scores[5])!)
-        FourOKLabel.text = String(describing: (OnePlayerVC?.scores[4])!)
-        FullHouseLabel.text = String(describing: (OnePlayerVC?.scores[3])!)
-        SMStrightLabel.text = String(describing: (OnePlayerVC?.scores[2])!)
-        LGStrightLabel.text = String(describing: (OnePlayerVC?.scores[1])!)
-        YahtzeeLabel.text = String(describing: (OnePlayerVC?.scores[0])!)
-        */
+        print(OnePlayerVC?.game.scores)
+        
+        YahtzeeLabel.text = String(describing: (OnePlayerVC?.game.scores[0])!)
+        LGStrightLabel.text = String(describing: (OnePlayerVC?.game.scores[1])!)
+        SMStrightLabel.text = String(describing: (OnePlayerVC?.game.scores[2])!)
+        FullHouseLabel.text = String(describing: (OnePlayerVC?.game.scores[3])!)
+        FourOKLabel.text = String(describing: (OnePlayerVC?.game.scores[4])!)
+        ThreeOKLabel.text = String(describing: (OnePlayerVC?.game.scores[5])!)
+        SixesLabel.text = String(describing: (OnePlayerVC?.game.scores[6])!)
+        FivesLabel.text = String(describing: (OnePlayerVC?.game.scores[7])!)
+        FoursLabel.text = String(describing: (OnePlayerVC?.game.scores[8])!)
+        ThreesLabel.text = String(describing: (OnePlayerVC?.game.scores[9])!)
+        TwosLabel.text = String(describing: (OnePlayerVC?.game.scores[10])!)
+        AcesLabel.text = String(describing: (OnePlayerVC?.game.scores[11])!)
+        ChanceLabel.text = String(describing: (OnePlayerVC?.game.scores[12])!)
+        TotalLabel.text = String(describing: (OnePlayerVC?.game.scores[13])!)
     }
     
+    
     @IBAction func Menu(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
     
     

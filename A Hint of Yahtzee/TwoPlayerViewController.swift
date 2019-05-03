@@ -17,7 +17,6 @@ class TwoPlayerViewController: UIViewController {
     }
     
     @IBAction func Menu(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
     
 

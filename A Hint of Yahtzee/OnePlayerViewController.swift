@@ -9,6 +9,9 @@
 import UIKit
 
 class OnePlayerViewController: UIViewController {
+    
+    var game = Game()
+    
 //********************************** MAIN FUNCTIONS **********************************//
     
     override func viewDidLoad() {
@@ -18,12 +21,13 @@ class OnePlayerViewController: UIViewController {
     }
     
     @IBAction func Menu(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
     
     
     @IBAction func SeeScores(_ sender: Any) {
+        game.scores = game.scores
     }
+    
     
 
     //***********************************************************************************//
@@ -73,7 +77,7 @@ class OnePlayerViewController: UIViewController {
 //************************************ Variables ************************************//
     var dice: [Int] = [0,0,0,0,0]
     
-    var scores: [Int] = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0]
+    //var scores: [Int] = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0]
     
     var highest: Int = 0
     var tempHighest: Int = 0
@@ -112,8 +116,9 @@ class OnePlayerViewController: UIViewController {
         nextTurn.isHidden = true
         turns += 1
         if (turns == 13) {
-            //SeeScores.isHidden = false
+            SeeScores.isHidden = false
         }
+        print("\(game.scores)")
     }
     
     
@@ -158,7 +163,7 @@ class OnePlayerViewController: UIViewController {
                 Roll.isEnabled = false
                 dice.sort()
                 addScore(one:dice[0], two:dice[1], three:dice[2], four:dice[3], five:dice[4])
-                CurrentScore.text = "\(scores[13])"
+                CurrentScore.text = "\(game.scores[13])"
                 Roll.isHidden = true
                 nextTurn.isHidden = false
             }
@@ -294,10 +299,10 @@ class OnePlayerViewController: UIViewController {
             }
         }
         
-        if (scores[turnMax] == -1) {
-            scores[turnMax] = turnScores[turnMax]
+        if (game.scores[turnMax] == -1) {
+            game.scores[turnMax] = turnScores[turnMax]
         }else {
-            while (scores[turnMax] != -1) {
+            while (game.scores[turnMax] != -1) {
                 tempHighest = 0
                 for i in 0...12 {
                     if (turnScores[i] > tempHighest && turnScores[i] < highest){
@@ -308,24 +313,25 @@ class OnePlayerViewController: UIViewController {
                 }
                 print("Highest: \(highest)")
                 
-                if(scores[turnMax] != -1){
+                if(game.scores[turnMax] != -1){
                     for i in stride(from: 12, to: -1, by: -1) {
-                        if (scores[i] == -1){
+                        if (game.scores[i] == -1){
                             turnMax = i
                         }
                     }
                 
                 }
             }
-            scores[turnMax] = turnScores[turnMax]
+            game.scores[turnMax] = turnScores[turnMax]
         }
         
         
-        scores[13] = scores[13] + scores [turnMax]
+        game.scores[13] = game.scores[13] + game.scores[turnMax]
         
         print("highest: \(highest)")
         print("turnMax: \(turnMax)")
-        print("scores: \(scores)")
+        print("scores: \(game.scores)")
+        game.scores = game.scores
     }
     
     

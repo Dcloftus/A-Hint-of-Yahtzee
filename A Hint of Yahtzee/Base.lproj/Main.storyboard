@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="232" id="eAB-h1-1yp"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIc-wB-40t">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIc-wB-40t">
                                 <rect key="frame" x="97" y="631" width="220" height="60"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
                                 <size key="titleShadowOffset" width="2" height="-2"/>
@@ -39,7 +39,7 @@
                                     <segue destination="NNd-hO-cPa" kind="show" id="NOT-Ui-cd0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0YC-oM-lp4">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0YC-oM-lp4">
                                 <rect key="frame" x="132" y="779" width="149" height="38"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="21"/>
                                 <size key="titleShadowOffset" width="2" height="-2"/>
@@ -55,7 +55,7 @@
                                 <rect key="frame" x="70" y="524" width="273" height="60"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="40"/>
                                 <size key="titleShadowOffset" width="2" height="-2"/>
-                                <state key="normal" title="One Player">
+                                <state key="normal" title="Start Game">
                                     <color key="titleColor" red="1" green="0.68424689620000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -121,7 +121,7 @@
                                 </state>
                                 <connections>
                                     <action selector="Menu:" destination="pnV-1X-Goy" eventType="touchUpInside" id="PIo-6A-CdJ"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="e7K-xn-2wY"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="hCe-ax-0W0"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2IO-AP-0sW">
@@ -262,17 +262,17 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeX-0t-fhp">
-                                <rect key="frame" x="112" y="760" width="210" height="52"/>
+                                <rect key="frame" x="102" y="328" width="210" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="33"/>
                                 <size key="titleShadowOffset" width="2" height="-2"/>
-                                <state key="normal" title="Next Turn">
+                                <state key="normal" title="See Scores">
                                     <color key="titleColor" red="1" green="0.68424689620000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="Roll:" destination="pnV-1X-Goy" eventType="touchUpInside" id="TqW-xJ-FQq"/>
-                                    <action selector="nextTurn:" destination="pnV-1X-Goy" eventType="touchUpInside" id="n8e-wA-bLd"/>
+                                    <action selector="SeeScores:" destination="pnV-1X-Goy" eventType="touchUpInside" id="iIk-5i-exN"/>
+                                    <segue destination="eB1-Hy-mht" kind="show" id="fkt-Ee-2fL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -308,6 +308,7 @@
                         <outlet property="BottomRightSwitch" destination="DK6-mA-6Oi" id="Hoc-jN-ody"/>
                         <outlet property="CurrentScore" destination="4fx-D2-XI3" id="5W3-UN-fvk"/>
                         <outlet property="Roll" destination="NJS-yK-bIa" id="Eh3-EB-1xW"/>
+                        <outlet property="SeeScores" destination="PeX-0t-fhp" id="zvm-IO-Evu"/>
                         <outlet property="TopLeftSwitch" destination="x1f-lf-INh" id="yXs-82-aHo"/>
                         <outlet property="TopRightSwitch" destination="Rzp-Uh-XNd" id="IZM-16-ti4"/>
                         <outlet property="bottomCenter" destination="wbR-g7-fXc" id="Xnn-i0-xLi"/>
@@ -357,13 +358,13 @@
                                 </state>
                                 <connections>
                                     <action selector="Menu:" destination="eB1-Hy-mht" eventType="touchUpInside" id="DId-ye-OQt"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="nfs-oy-wUj"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="lxW-jg-ciO"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScoreSheet" translatesAutoresizingMaskIntoConstraints="NO" id="LXr-FD-4qO">
-                                <rect key="frame" x="30" y="296" width="354" height="379.00000000000023"/>
+                                <rect key="frame" x="30" y="296" width="354" height="379"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7.5" translatesAutoresizingMaskIntoConstraints="NO" id="rxV-IY-YCg">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7.5" translatesAutoresizingMaskIntoConstraints="NO" id="rxV-IY-YCg" userLabel="Top">
                                 <rect key="frame" x="308" y="324.5" width="8.5" height="133.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh1-9D-hTC" userLabel="AcesLabel">
@@ -404,7 +405,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7.5" translatesAutoresizingMaskIntoConstraints="NO" id="UZ5-8m-JfK">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7.5" translatesAutoresizingMaskIntoConstraints="NO" id="UZ5-8m-JfK" userLabel="Bottom">
                                 <rect key="frame" x="308" y="492" width="8.5" height="181"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cn7-wJ-2aX" userLabel="3OKLabel">
@@ -555,7 +556,7 @@
                                 </state>
                                 <connections>
                                     <action selector="Menu:" destination="NNd-hO-cPa" eventType="touchUpInside" id="YVK-9J-Xxe"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Fad-Xt-lv8"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Tcn-Aq-JLn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IN DEVELOPMENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJF-Jg-hMh">
@@ -593,6 +594,7 @@
         <image name="yahtzee" width="540" height="360"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fad-Xt-lv8"/>
+        <segue reference="fkt-Ee-2fL"/>
+        <segue reference="lxW-jg-ciO"/>
     </inferredMetricsTieBreakers>
 </document>
