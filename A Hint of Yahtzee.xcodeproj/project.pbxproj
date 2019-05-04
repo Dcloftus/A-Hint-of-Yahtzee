@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		E92F19C722727BC40050DEE6 /* OnePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F19C622727BC40050DEE6 /* OnePlayerViewController.swift */; };
 		E92F19C922727BD30050DEE6 /* TwoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F19C822727BD30050DEE6 /* TwoPlayerViewController.swift */; };
-		E92F19CB22727BE50050DEE6 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F19CA22727BE50050DEE6 /* ConfigViewController.swift */; };
+		E92F19CB22727BE50050DEE6 /* OnePlayerScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F19CA22727BE50050DEE6 /* OnePlayerScoreViewController.swift */; };
 		E99BFE41227CEF600030B594 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99BFE40227CEF600030B594 /* Game.swift */; };
+		E99BFE43227D1C2C0030B594 /* TPScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99BFE42227D1C2C0030B594 /* TPScoreViewController.swift */; };
+		E99BFE45227D238C0030B594 /* TwoPlayerScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99BFE44227D238C0030B594 /* TwoPlayerScoreViewController.swift */; };
 		E9BBF23622710B3F00C29BA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BBF23522710B3F00C29BA0 /* AppDelegate.swift */; };
 		E9BBF23822710B3F00C29BA0 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BBF23722710B3F00C29BA0 /* MainMenuViewController.swift */; };
 		E9BBF23B22710B3F00C29BA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9BBF23922710B3F00C29BA0 /* Main.storyboard */; };
@@ -21,8 +23,10 @@
 /* Begin PBXFileReference section */
 		E92F19C622727BC40050DEE6 /* OnePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePlayerViewController.swift; sourceTree = "<group>"; };
 		E92F19C822727BD30050DEE6 /* TwoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerViewController.swift; sourceTree = "<group>"; };
-		E92F19CA22727BE50050DEE6 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		E92F19CA22727BE50050DEE6 /* OnePlayerScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePlayerScoreViewController.swift; sourceTree = "<group>"; };
 		E99BFE40227CEF600030B594 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E99BFE42227D1C2C0030B594 /* TPScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPScoreViewController.swift; sourceTree = "<group>"; };
+		E99BFE44227D238C0030B594 /* TwoPlayerScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerScoreViewController.swift; sourceTree = "<group>"; };
 		E9BBF23222710B3F00C29BA0 /* A Hint of Yahtzee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A Hint of Yahtzee.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BBF23522710B3F00C29BA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9BBF23722710B3F00C29BA0 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -62,16 +66,18 @@
 		E9BBF23422710B3F00C29BA0 /* A Hint of Yahtzee */ = {
 			isa = PBXGroup;
 			children = (
+				E99BFE42227D1C2C0030B594 /* TPScoreViewController.swift */,
 				E9BBF23522710B3F00C29BA0 /* AppDelegate.swift */,
 				E9BBF23722710B3F00C29BA0 /* MainMenuViewController.swift */,
 				E92F19C622727BC40050DEE6 /* OnePlayerViewController.swift */,
 				E92F19C822727BD30050DEE6 /* TwoPlayerViewController.swift */,
-				E92F19CA22727BE50050DEE6 /* ConfigViewController.swift */,
+				E92F19CA22727BE50050DEE6 /* OnePlayerScoreViewController.swift */,
 				E9BBF23922710B3F00C29BA0 /* Main.storyboard */,
 				E9BBF23C22710B4000C29BA0 /* Assets.xcassets */,
 				E9BBF23E22710B4000C29BA0 /* LaunchScreen.storyboard */,
 				E99BFE40227CEF600030B594 /* Game.swift */,
 				E9BBF24122710B4000C29BA0 /* Info.plist */,
+				E99BFE44227D238C0030B594 /* TwoPlayerScoreViewController.swift */,
 			);
 			path = "A Hint of Yahtzee";
 			sourceTree = "<group>";
@@ -151,8 +157,10 @@
 				E99BFE41227CEF600030B594 /* Game.swift in Sources */,
 				E9BBF23822710B3F00C29BA0 /* MainMenuViewController.swift in Sources */,
 				E92F19C922727BD30050DEE6 /* TwoPlayerViewController.swift in Sources */,
-				E92F19CB22727BE50050DEE6 /* ConfigViewController.swift in Sources */,
+				E92F19CB22727BE50050DEE6 /* OnePlayerScoreViewController.swift in Sources */,
+				E99BFE45227D238C0030B594 /* TwoPlayerScoreViewController.swift in Sources */,
 				E9BBF23622710B3F00C29BA0 /* AppDelegate.swift in Sources */,
+				E99BFE43227D1C2C0030B594 /* TPScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

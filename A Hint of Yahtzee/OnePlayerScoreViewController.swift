@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConfigViewController: UIViewController {
+class OnePlayerScoreViewController: UIViewController {
     
     
     
@@ -21,8 +21,8 @@ class ConfigViewController: UIViewController {
     @IBOutlet weak var ThreeOKLabel: UILabel!
     @IBOutlet weak var FourOKLabel: UILabel!
     @IBOutlet weak var FullHouseLabel: UILabel!
-    @IBOutlet weak var SMStrightLabel: UILabel!
-    @IBOutlet weak var LGStrightLabel: UILabel!
+    @IBOutlet weak var SMStraightLabel: UILabel!
+    @IBOutlet weak var LGStraightLabel: UILabel!
     @IBOutlet weak var YahtzeeLabel: UILabel!
     @IBOutlet weak var ChanceLabel: UILabel!
     @IBOutlet weak var TotalLabel: UILabel!
@@ -38,11 +38,11 @@ class ConfigViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(OnePlayerVC?.game.scores)
+        //print(OnePlayerVC?.game.scores)
         
         YahtzeeLabel.text = String(describing: (OnePlayerVC?.game.scores[0])!)
-        LGStrightLabel.text = String(describing: (OnePlayerVC?.game.scores[1])!)
-        SMStrightLabel.text = String(describing: (OnePlayerVC?.game.scores[2])!)
+        LGStraightLabel.text = String(describing: (OnePlayerVC?.game.scores[1])!)
+        SMStraightLabel.text = String(describing: (OnePlayerVC?.game.scores[2])!)
         FullHouseLabel.text = String(describing: (OnePlayerVC?.game.scores[3])!)
         FourOKLabel.text = String(describing: (OnePlayerVC?.game.scores[4])!)
         ThreeOKLabel.text = String(describing: (OnePlayerVC?.game.scores[5])!)
@@ -60,9 +60,7 @@ class ConfigViewController: UIViewController {
     @IBAction func Menu(_ sender: Any) {
     }
     
-    
-    
-    
+
     
 
 }

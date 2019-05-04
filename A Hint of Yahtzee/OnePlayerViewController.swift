@@ -25,12 +25,11 @@ class OnePlayerViewController: UIViewController {
     
     
     @IBAction func SeeScores(_ sender: Any) {
-        game.scores = game.scores
     }
     
     
 
-    //***********************************************************************************//
+//***********************************************************************************//
     
     
     
@@ -331,10 +330,30 @@ class OnePlayerViewController: UIViewController {
         print("highest: \(highest)")
         print("turnMax: \(turnMax)")
         print("scores: \(game.scores)")
-        game.scores = game.scores
+        
+        
     }
     
     
 //***********************************************************************************//
-
+    /*
+    // MARK: - ==== Navigation ====
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "toScore":
+            let dest = segue.destination as! OnePlayerScoreViewController
+            dest.OnePlayerVC = self
+        case "toMain":
+            let main = segue.destination as! MainMenuViewController
+            main.OnePlayerVC = self
+        default: break
+        }
+    }
+*/
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! OnePlayerScoreViewController
+        dest.OnePlayerVC = self
+    }
+    
 }

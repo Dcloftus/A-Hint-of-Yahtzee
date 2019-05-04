@@ -10,6 +10,11 @@ import UIKit
 
 class Game: NSObject {
     
-    var scores:Array = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0]
+    var scores: Array = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0]
+    
+    
+    var POScores: Array = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0]
+    
+    var PTScores: Array = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0]
 
 }
