@@ -336,7 +336,7 @@ class OnePlayerViewController: UIViewController {
     
     
 //***********************************************************************************//
-    /*
+    
     // MARK: - ==== Navigation ====
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
@@ -349,11 +349,11 @@ class OnePlayerViewController: UIViewController {
         default: break
         }
     }
-*/
-    
+
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination as! OnePlayerScoreViewController
         dest.OnePlayerVC = self
     }
-    
+    */
 }
